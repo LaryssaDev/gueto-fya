@@ -17,16 +17,16 @@ const Shop: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Banner - Reduced size and Centered */}
-      <div className="w-full flex justify-center">
-        <div className="w-full max-w-lg rounded-lg overflow-hidden shadow-2xl border border-brand-gray/50">
+      {/* Banner - Reduced size and Centered to give focus to products */}
+      <div className="w-full flex justify-center px-2">
+        <div className="w-full max-w-lg rounded-xl overflow-hidden shadow-2xl border border-brand-gray/50">
           <img src={BANNER_URL} alt="Promoção Gueto Fya" className="w-full h-auto object-cover" />
         </div>
       </div>
 
       {/* Category Filter */}
       <div className="overflow-x-auto no-scrollbar pb-2">
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 px-1">
           <button
             onClick={() => setActiveCategory('TODOS')}
             className={`px-4 py-1.5 rounded-full font-bold uppercase text-xs whitespace-nowrap transition-all ${
@@ -53,7 +53,7 @@ const Shop: React.FC = () => {
         </div>
       </div>
 
-      {/* Product Grid - Optimized sizing */}
+      {/* Product Grid - 5 columns for desktop, 2 for mobile */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {filteredProducts.map((product) => (
           <div key={product.id} className="bg-brand-dark rounded-lg overflow-hidden border border-brand-gray shadow-md group hover:border-brand-orange transition-colors">
